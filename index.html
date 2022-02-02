@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax form submitted</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="container my-5">
+
+    <form onsubmit="">
+        <div class="row mb-3">
+          <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>
+          <div class="col-sm-10">
+            <input id="user-name" type="name" class=" w-50 form-control"  
+            required
+            id="name">
+          </div>
+          </div>
+        
+        <div class="row mb-3">
+          <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+          <div class="col-sm-10">
+            <input id="user-email "type="email" class=" w-50 form-control" 
+            required
+            id="inputEmail3">
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label for="inputPassword3" class="col-sm-2 col-form-label">Number</label>
+          <div class="col-sm-10">
+            <input type="number" class=" w-50 form-control" 
+            required
+            id="number">
+          </div>
+        </div>
+        <fieldset class="row mb-3">
+          <legend class="col-form-label col-sm-2 pt-0">Gender</legend>
+          <div class="col-sm-10">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" required
+              
+              name="gridRadios" id="gridRadios1" value="option1" checked>
+              <label class="form-check-label" for="gridRadios1">
+               Male
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+              <label class="form-check-label" for="gridRadios2">
+               Female
+              </label>
+            </div>
+           
+          </div>
+        </fieldset>
+        <div class="row mb-4 w-50">
+            
+                <label for="inputState" class="form-label">Country</label>
+                <select id="inputState" class="form-select">
+                  <option selected>Choose...</option>
+                  <option>Bangladesh</option>
+                  <option>India</option>
+                  <option>Rajhon</option>
+                  <option>Bangladesh</option>
+                </select>
+             
+        </div>
+        <button id="button-btn" type="submit" class=" text-center mx-auto w-25 btn btn-primary">Submit</button>
+      </form>
+    </div>
+     <script type = "text/javascript">
+
+        var ajax = new XMLHttpRequest()
+        
+         document.getElementById('button-btn').addEventListener('click',function(){
+
+
+            var url = './echo.php'
+            ajax.onreadystatechange = response //no paranthesis
+            ajax.open('POST', url, true) // method, url,true
+            ajax.setRequestHeader('Content-type', 'application/X-WWW-form-urlencoded')
+            ajax.send('name=me & msg = my message & time=2017')
+
+          // validation form
+
+    const user = document.getElementById("user-email");
+    const emailValid = user.value;
+    const users =document.getElementById('user-name');
+    const nameValid =users.value;
+    if(emailValid=='csefarjana@gmail.com' && nameValid=='bapr124'){
+        window.location.href='bank.html'
+
+      
+    }
+})
+    </script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+
+</html>
